@@ -1,0 +1,11 @@
+.wrapper{
+    background: linear-gradient(to right, #b000b0, #323179);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+}
+.title{
+    color: white;
+    font-family: "Swis721 BT";
+}
