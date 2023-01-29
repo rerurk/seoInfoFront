@@ -1,0 +1,29 @@
+.wrapper {
+    width: 95%;
+    height: 100%;
+    background: white;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    outline: solid 1px #888;
+    border-radius: 1rem;
+}
+.wrapper:hover{
+    border: solid 1px #fff;
+}
+.wrapper_title{
+    width: 100%;
+    height: 2rem;
+    border: solid 1px grey;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    overflow: hidden;
+    color: white;
+    background: #323179;
+}
+
+.wrapper_FilesDir{
+    width: 100%;
+    height: 80%;
+}

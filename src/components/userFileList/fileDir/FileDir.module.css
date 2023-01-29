@@ -1,0 +1,17 @@
+.wrapper{
+    width: 100%;
+    background: linear-gradient(to top, #999,#777);
+    height: 2rem;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+.wrapper>span{
+    margin: 0 2rem 0 2rem;
+
+}
+.wrapper>button{
+    margin: 0 2rem 0 2rem;
+
+}

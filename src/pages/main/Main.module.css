@@ -1,7 +1,39 @@
 .wrapper {
+
     width: 100%;
     height: 100%;
+    background: linear-gradient(to right, #d000d0, #323179);
+    font-family: "Microsoft Sans Serif";
+
+
+
+}
+
+.wrapper_head {
+    width: 100%;
     display: flex;
-    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.title {
+    color: white;
+
+}
+
+.wrapper_UploadFile{
+    height: 8rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.wrapper_UserFileList{
+    width: 100%;
+    height: 60%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
 }

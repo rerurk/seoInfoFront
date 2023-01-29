@@ -1,6 +1,7 @@
 import axios from "axios";
 import {Requests} from "./Requests";
 import {AuthStatus, User} from "../structs/auth";
+import {ClientSett} from "../structs/clientsSettings";
 
 
 export class Fetches {
@@ -28,7 +29,6 @@ export class Fetches {
             return Error()
         }
     }
-
     public static async Authorization(user:User): Promise<AuthStatus | Error> {
         try {
             const res = await axios.post<AuthStatus>(Requests.Authorization,user)
@@ -40,15 +40,28 @@ export class Fetches {
             return Error()
         }
     }
-    public static async Uploadfile(dataFile:File): Promise<AuthStatus | Error> {
+    public static async UploadFile(dataFile:File): Promise<AuthStatus | Error> {
         var formData = new FormData();
-        formData.append("myFile", dataFile);
+        formData.append("dataFile", dataFile);
         try {
             const res = await axios.post<AuthStatus>(Requests.Uploadfile, formData, {
                 headers: {
                     'Content-Type': 'multipart/form-data'
                 }
             })
+            if (res.status !== 200) {
+                alert(res.data)
+                console.log(res)
+                return Error("ошибка")
+            }
+            return res.data
+        } catch (e) {
+            return Error()
+        }
+    }
+    public static async GetClientDir(): Promise<ClientSett[] | Error> {
+        try {
+            const res = await axios.get<ClientSett[]>(Requests.GetClientDir)
             if (res.status !== 200) {
                 return Error("ошибка")
             }
@@ -57,6 +70,33 @@ export class Fetches {
             return Error()
         }
     }
+
+    public static async StartSeoSetInfo(clientSett:ClientSett): Promise<any | Error> {
+
+        try {
+            const res = await axios.post(Requests.StartSeoSetInfo,clientSett)
+            if (res.status !== 200) {
+                return Error("ошибка")
+            }
+            return res.data
+        } catch (e) {
+            return Error()
+        }
+    }
+    public static async    GetDataFile(clientSett:ClientSett): Promise<any | Error> {
+
+        try {
+            const res = await axios.post(Requests.GetDataFile,clientSett)
+            if (res.status !== 200) {
+                return Error("ошибка")
+            }
+            return res.data
+        } catch (e) {
+            return Error()
+        }
+    }
+
+
 }
 
 /*
